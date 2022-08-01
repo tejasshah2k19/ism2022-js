@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <script>
+        function add() {
+            console.log("add called");
+            var n1 = document.getElementById("n1").value
+            var n2 = document.getElementById("n2").value
+            let isError = false
+            if (n1.trim().length == 0) {
+                isError = true
+                document.getElementById("n1Error").innerHTML = "Please enter n1"
+            }else{
+                document.getElementById("n1Error").innerHTML = ""
+            }
+
+            if (n2.trim().length == 0) {
+                isError = true
+                document.getElementById("n2Error").innerHTML = "Please enter n2"
+            }else{
+                document.getElementById("n2Error").innerHTML =""
+            }
+
+            if (isError) {
+ 
+            } else {
+                let ans = parseInt(n1) + parseInt(n2)
+                // var ans = n1 + n2
+                // alert(ans);
+                // document.write(ans)
+                document.getElementById("ans").innerHTML = ans
+            }
+        }            
+    </script>
+</head>
+
+<body>
+    <form name="calc">
+        No.1 <input type="text" name="n1" id="n1" />
+        <span id="n1Error"></span>
+        <br><br>
+        No.2 <input type="text" name="n2" id="n2" />
+        <span id="n2Error"></span>
+        <br><br>
+        <button type="button" onclick="add()">Add</button>
+    </form>
+    <br>
+
+    <div id="ans"></div>
+
+</body>
+
+</html>

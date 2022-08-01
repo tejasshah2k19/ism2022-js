@@ -1,0 +1,111 @@
+what is javascript? 
+
+html page -> static 
+    event 
+    css / animation / interaction 
+
+
+frontend -> browser -> 
+nodejs -> js -> backend 
+
+
+
+html / jsp / 
+
+1) internal - inside page 
+2) external - outside page 
+
+
+ES1 ES2 ES3 [1999]
+2009 - ES5 
+2016 - ES6 
+
+ES2017 
+
+------------------------------------------------------
+<script language="text/javascript"> 
+</script>
+
+
+head 
+body->last 
+
+
+1) validation
+2) timeout 
+3) html content 
+4) html css 
+5) html tag attribute
+6) java - ajax - server side api call / url 
+7) jquery 
+
+--------------------------------------------------------
+
+let 
+var 
+const -> final variable --> constant 
+
+function 
+length 
+
+if 
+
+for 
+
+---------------------------------------------------------
+x = "royal"
+y = 'royal' 
+
+comment : 
+    //
+    /*   */
+
+---------------------------------------------------------
+events :- 
+    page load 
+    finish 
+    body 
+    button 
+    dropdown -> change 
+
+    onclick , onchange , onload , onmouseover,onmouseout,onkeydown 
+
+    let d = new Date();
+    d.getHours();
+
+
+    let users = []
+
+    users.push(user);
+    users.pop()
+    sort()
+    reverse() 
+
+---------------------------------------------------------
+jquery -- js lib 
+
+"write less do more" 
+
+download 
+cdn 
+
+$("#firsName")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

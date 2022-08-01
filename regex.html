@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        // [abc]
+        // [0-9]
+        // [a-z]
+        // [A-Z]
+        // (x|y|z)
+        //[abc]+
+        //[abc]*
+        /*
+            \d => digits 
+            \s => space 
+            .  => any character 
+
+            ? -> 0 1 
+            + -> 1 N 
+            * -> 0 N 
+
+            to check regex we have test() 
+
+        */
+        function checkData() {
+            let data = document.getElementById("data").value;
+            let regex = /\s/; //ram ravan  
+            console.log("checking....space")
+            console.log(regex.test(data));
+
+            let alpha = /^[a-zA-Z]+$/; //123  a123 123a  xyz  
+            console.log("checking....alpha")
+            console.log(alpha.test(data));
+
+            let digit = /^[0-9]+$/
+            console.log("checking....digit")
+            console.log(digit.test(data));
+
+            //XXXX@XXX.XXX
+            let emailRegex = /^[a-zA-Z0-9_.]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$/
+            //1 or N 
+            //[a-z]+
+            console.log("checking...email");
+            console.log(emailRegex.test(data));
+
+            //printf(" \"hi\" ");
+        }
+    </script>
+</head>
+<body>
+    data : <input type="text" id="data" /><br><br>
+    <button onclick="checkData()">Go</button>
+</body>
+
+</html>

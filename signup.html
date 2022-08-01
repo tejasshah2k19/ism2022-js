@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        var users = []
+        var isError = false
+
+        function firstNameValidation() {
+            console.log("firstname validation ...");
+            let firstName = document.getElementById("firstName").value
+            if (firstName.trim().length == 0) {
+                console.log("error in fname");
+                document.getElementById("firstNameError").innerHTML = "Please Enter FirstName"
+                return false
+            } else {
+
+                document.getElementById("firstNameError").innerHTML = ""
+                return true
+            }
+        }
+
+
+        function emailValidation() {
+            let email = document.getElementById("email").value
+            if (email.trim().length == 0) {
+                document.getElementById("emailError").innerHTML = "Please Enter Email"
+                return false
+            } else {
+                document.getElementById("emailError").innerHTML = ""
+                return true
+            }
+        }
+
+
+        function passwordValidation() {
+            let password = document.getElementById("password").value
+            if (password.trim().length == 0) {
+                document.getElementById("passwordError").innerHTML = "Please Enter Password"
+                return false
+            } else {
+                document.getElementById("passwordError").innerHTML = ""
+                return true
+            }
+        }
+
+        function signup() {
+            if (firstNameValidation() && emailValidation() && passwordValidation()) {
+                alert("signup  done")
+
+                let firstName = document.getElementById("firstName").value
+                let email = document.getElementById("email").value
+                let password = document.getElementById("password").value
+
+                let user = { "firstName": firstName, "email": email, "password": password }
+                users.push(user)
+
+                let signupform = document.getElementById("signupform")
+                signupform.setAttribute("style", "display:none")
+                let loginform = document.getElementById("loginform")
+                loginform.setAttribute("style", "display:visible")
+            } else {
+                alert("please correct errors")
+            }
+        }
+
+        function login() {
+            let email = document.getElementById("loginEmail").value
+            let password = document.getElementById("loginPassword").value
+            let isLogin = false
+            console.log(email);
+            console.log(password);
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == email && users[i].password == password) {
+                    isLogin = true;
+                    console.log(users[i]);
+                }
+            }
+            if (isLogin == true) {
+                let loginform = document.getElementById("loginform")
+                loginform.setAttribute("style", "display:none")
+                let home = document.getElementById("home")
+                home.setAttribute("style","display:visible");
+
+            } else {
+                alert("Invalid Credentials...")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="signupform">
+        <form>
+            FirstName : <input type="text" id="firstName" onblur="firstNameValidation()" />
+            <span id="firstNameError"></span>
+            <br><Br>
+            Email : <input type="text" id="email" onblur="emailValidation()" />
+            <span id="emailError"></span>
+
+            <br><br>
+
+            Password : <input type="password" id="password" onblur="passwordValidation()" />
+            <span id="passwordError"></span>
+            <br><BR>
+
+            <br><br>
+            <input type="button" value="Signup" onclick="signup()" />
+
+        </form>
+    </div>
+
+
+    <div id="loginform" style="display:none ;">
+        <form>
+
+            Email : <input type="text" id="loginEmail" onblur="emailValidation()" />
+            <span id="emailError"></span>
+
+            <br><br>
+
+            Password : <input type="password" id="loginPassword" onblur="passwordValidation()" />
+            <span id="passwordError"></span>
+            <br><BR>
+
+            <br><br>
+            <input type="button" value="Login" onclick="login()" />
+
+        </form>
+    </div>
+
+
+    <div id="home" style="display:none ;">
+
+            Welcome...
+    </div>
+
+</body>
+
+</html>
